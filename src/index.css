@@ -11,3 +11,98 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  perspective: 1000px;
+}
+.button-wrapper {
+  position: relative;
+  width: 506px;
+  height: 66px;
+}
+.button2 {
+  width: 500px;
+  height: 60px;
+  background-color: yellow;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.button {
+  width: 500px;
+  height: 60px;
+  background-color: red;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 700;
+  position: absolute;
+  animation: seesaw 4s linear infinite;
+  transform-style: preserve-3d;
+  z-index: 1; 
+}
+ @keyframes seesaw {
+  0%, 100% { transform: rotateX(0deg) rotateY(0deg); }
+  25% { transform: rotateX(8deg) rotateY(4deg); }
+  50% { transform: rotateX(0deg) rotateY(8deg); }
+  75% { transform: rotateX(-8deg) rotateY(4deg); }
+}   */
+
+
+/* second button */
+
+/* .container2 {
+  height:30px
+}
+
+.button-wrapper {
+  position: relative;
+  width: 400px;
+  height: 60px;
+}
+.button-yellow {
+  width: 300px;
+  height: 49px;
+  background-color: yellow;
+  border-radius: 10px;
+  position: absolute;
+}
+.button-red {
+  width: 300px;
+  height: 50px;
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  position: absolute;
+  top: 1;
+  left: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: moveButton 4s ease-in-out infinite;
+}
+@keyframes moveButton {
+  0%,
+  100% {
+    clip-path: inset(0px 0px 0px 3px);
+  }
+  25% {
+    clip-path: inset(3px 0px 0px 0px);
+  }
+  50% {
+    clip-path: inset(0px 3px 0px 0px);
+  }
+  75% {
+    clip-path: inset(0px 0px 3px 0px);
+  }
+} */
+
