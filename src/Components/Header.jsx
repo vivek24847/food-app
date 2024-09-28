@@ -31,58 +31,60 @@ const Header = ({ searchText, handleChange }) => {
 
   const MotionButton = motion(Button);
   return (
-    <Flex
-      p={"10px 20px"}
-      alignItems={"center"}
-      justifyContent={"space-between"}
-    >
-      <Flex gap={"40px"}>
-        <Image src="/food-logo.png" alt="logo" width={"200px"} />
-        <List display={"flex"} gap={"60px"} alignItems={"center"}>
-          <Link to={"/"}>
-            <ListItem>Home</ListItem>
-          </Link>
-          <Link to={"/about"}>
-            <ListItem>About Us</ListItem>
-          </Link>
-          <Link to={"/contact"}>
-            <ListItem>Contact Us</ListItem>
-          </Link>
-          <Link to={"/career"}>
-            <ListItem>Career</ListItem>
-          </Link>
-        </List>
+    <>
+      <Flex
+        p={"10px 20px"}
+        alignItems={"center"}
+        justifyContent={"space-between"}
+      >
+        <Flex gap={"40px"}>
+          <Image src="/food-logo.png" alt="logo" width={"200px"} />
+          <List display={"flex"} gap={"60px"} alignItems={"center"}>
+            <Link to={"/"}>
+              <ListItem>Home</ListItem>
+            </Link>
+            <Link to={"/about"}>
+              <ListItem>About Us</ListItem>
+            </Link>
+            <Link to={"/contact"}>
+              <ListItem>Contact Us</ListItem>
+            </Link>
+            <Link to={"/career"}>
+              <ListItem>Career</ListItem>
+            </Link>
+          </List>
+        </Flex>
+        <Flex gap={"10px"}>
+          <MotionButton
+            //   initial={{ scale: 0 }}
+            animate={
+              !hasAnimated.current
+                ? { scale: 1, rotate: [0, 0, 360, 360, 0] }
+                : { scale: 1 }
+            }
+            transition={{
+              duration: 0.5,
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.1 }}
+            onClick={() => setIsOpen(true)}
+          >
+            Filters
+          </MotionButton>
+          <InputGroup>
+            <Input
+              value={searchText}
+              onChange={handleChange}
+              placeholder="Search"
+            />
+            <InputRightElement>
+              <Search2Icon />{" "}
+            </InputRightElement>
+          </InputGroup>
+        </Flex>
       </Flex>
-      <Flex gap={"10px"}>
-        <MotionButton
-          //   initial={{ scale: 0 }}
-          animate={
-            !hasAnimated.current
-              ? { scale: 1, rotate: [0, 0, 360, 360, 0] }
-              : { scale: 1 }
-          }
-          transition={{
-            duration: 0.5,
-          }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.1 }}
-          onClick={() => setIsOpen(true)}
-        >
-          Filters
-        </MotionButton>
-        <InputGroup>
-          <Input
-            value={searchText}
-            onChange={handleChange}
-            placeholder="Search"
-          />
-          <InputRightElement>
-            <Search2Icon />{" "}
-          </InputRightElement>
-        </InputGroup>
-      </Flex>
-      {isOpen ? <Modal>hello</Modal> : null}{" "}
-    </Flex>
+      {isOpen ? <Modal handleClose={setIsOpen}>hello</Modal> : null}{" "}
+    </>
   );
 };
 
